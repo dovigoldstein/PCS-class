@@ -1,0 +1,104 @@
+html{
+	background-color:purple;
+}
+body{
+	
+	background-color:black;
+	color: #c3c9cc;
+	font-size:35px;
+	text-shadow: 0px 12px 5px black;
+	font-family: "Lucida Console", Monaco, monospace;
+	max-width:1000px;
+	min-width:680px;
+	margin:0 auto;
+}
+.main{
+	background-image: url(images/background.png);
+	margin:60px;
+	border-radius:75px;
+	box-shadow: 0 0 20px 10px black inset;
+	padding: 20px 0;
+}
+.home{
+	background-image: url(images/home_background.png);
+}
+h1{
+	margin-top:0;
+	font-size:90px;
+}
+h2{
+	font-size:70px;
+	
+}
+header{
+	text-align:center;
+}
+#logo{
+	width:500px;
+	height:300px;
+}
+
+.menuitem{
+	display:inline-block;
+	text-align:center;
+	margin:auto 20px;
+}
+
+.description{
+	text-align:center;
+	margin:0px 100px;
+	font-size:35px;
+}
+
+img{
+	width:250px;
+	height:225px;
+	border-radius: 150px;
+	box-shadow: 0px 12px 18px 12px black;
+}
+a{
+	text-decoration:none;
+	color:#da8958;
+	margin:auto 20px;
+}
+
+a:hover{
+	color:blue;
+}
+.items{
+	font-size:35px;
+}
+
+ul{
+	list-style-image:url(images/bullet.png);
+}
+li a{
+	color:white;
+	line-height: 30px;
+}
+li{
+	font-size:15px;
+}
+
+article{
+	display:inline-block;
+	width:70%;
+	
+}
+nav{
+	display: inline-block;
+    vertical-align: top;
+    padding-right: 6px;
+    width: 17%;
+	
+}
+/*
+nav{
+	float: left;
+	overflow:hidden;
+}
+article{
+	margin-left: 20%;
+	border-left: 2px solid red;
+}*/
+

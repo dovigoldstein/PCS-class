@@ -1,0 +1,57 @@
+body{
+	
+	background-color:black;
+	color: #c3c9cc;
+	font-size:35px;
+	text-shadow: 0px 12px 5px black;
+	font-family: "Lucida Console", Monaco, monospace;
+	
+}
+.main{
+	background-image: url(images/background.png);
+	margin:60px;
+	border-radius:75px;
+	box-shadow: 0 0 20px 10px black inset;
+}
+h1{
+	font-size:90px;
+}
+h2{
+	font-size:75px;
+	
+}
+header{
+	text-align:center;
+}
+#logo{
+	width:500px;
+	height:300px;
+}
+
+.menuitem{
+	display:inline-block;
+	text-align:center;
+	margin:auto 20px;
+}
+.description{
+	text-align:center;
+	margin:0px 100px;
+	font-size:35px;
+}
+
+img{
+	width:250px;
+	height:225px;
+	border-radius: 30px;
+	box-shadow: 0px 12px 18px 12px black;
+}
+a{
+	text-decoration:none;
+	color:#bb4a71;
+	margin:auto 20px;
+	font-size:35px;
+}
+
+a:hover{
+	color:blue;
+}
