@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Burger Bar</title>
+        <link rel="stylesheet" href="../normalize.css">
+		<link rel="stylesheet" href="burgerstyle.css">
+		<link rel="icon" href="images/icon.png">
+	</head>
+	<body>
+		<header></header>
+        <div class="main">
+        <h2>Contact Us</h2>
+            <form  id="myForm">
+                <label>First Name:<input type="text" name="firstName" /></label>
+                <label>Last Name:<input type="text" name="lastName" required/></label>
+                <label>Email:<input type="email" name="email" required/></label>
+                <label>Phone:<input type="tel" name="phone"/></label>
+                <div class="rating">
+                    <label>How Would You Rate Us?<input type="range" name="rating" min="1" max="5"value="1"/></label>
+                    <img class="rating"src="images/star.png"/>
+                    <img class="rating"src="images/star.png"/>
+                    <img class="rating"src="images/star.png"/>
+                    <img class="rating"src="images/star.png"/>
+                    <img class="rating"src="images/star.png"/>
+                </div>
+                <label for="comment" >Comment:</label>
+                <textarea name="comment"form ="myForm"></textarea>
+                <input type="submit"/>
+            </form>
+            </div>
+	    <footer></footer>
+	</body>
+</html>	
