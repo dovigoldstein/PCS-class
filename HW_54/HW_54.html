@@ -10,6 +10,9 @@
         main{
             margin: 120px 0;
         }
+        .jumbotron:not(:last-child){
+            border-radius: 0;
+        }
         article,aside{
             padding-top:70px;
         }
@@ -22,9 +25,16 @@
         .navbar-text,.btn,.navbar-brand{
              color:white !important;
         }
-        .btn:hover {
+        a.btn:hover {
             text-decoration: underline !important;
             color:red !important;
+        }
+        input[type]{
+            box-shadow: darkgray 2px 2px;
+            margin:4px 8px  8px 2px;
+        }
+        th{
+            white-space: nowrap;
         }
         td{
             text-align: right;
@@ -35,9 +45,16 @@
         tr td:last-child {
             color:red;
         }
-        @media screen and (max-width: 999px) {
-                .col-md-4:not(:last-child){
+        @media screen and (max-width: 991px) {
+            .col-md-4:not(:last-child){
                 border-right:none;
+            }
+            .form-group{
+                display: block !important;
+            }
+            input[type],label{
+                display:inline-block !important;
+                margin:4px auto;
             }
         }
     </style>
@@ -73,19 +90,19 @@
             <h2>Products</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quis aliquam dolor ratione cumque repellendus praesentium ullam ipsum repellat laboriosam quia, fugiat fuga officiis, ipsam necessitatibus, minus omnis quibusdam nam!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequatur, incidunt cum vitae veritatis debitis a. Minima ducimus </p>
             <div class="row">
-                <section class="col-md-4 col-sm-12">
+                <section class="col-md-4">
                     <h3 class="text-center">Computers</h3>
                     <img class="img-responsive"src="images/macworld.jpg" alt="macworld"/>
                     <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt harum obcaecati pariatur illo, ipsa amet, laborum. Dolorum, asperiores velit quia.</p>
                 </section>
-                <section class="col-md-4 col-sm-12">
+                <section class="col-md-4">
                     <h3 class="text-center">Choir</h3>
                         <video class="img-responsive"controls poster="images/shira.png">
                             <source src="images/El Hanaar Hazeh.mp4" />
                         </video>
                     <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt harum obcaecati pariatur illo, ipsa amet, laborum. Dolorum, asperiores velit quia.</p>
                 </section>
-                <section class="col-md-4 col-sm-12">
+                <section class="col-md-4">
                     <h3 class="text-center">Candy</h3>
                     <img class="img-responsive"src="images/candy.png" alt="candy"/>
                     <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt harum obcaecati pariatur illo, ipsa amet, laborum. Dolorum, asperiores velit quia.</p>
@@ -95,7 +112,7 @@
         <aside id="signup">
             <div class="jumbotron navbar-inverse">
                 <h2 class="text-center">Sign Me Up!</h2>
-                <form action="signup.php" method="post">
+                <form class="form-inline text-center"action="signup.php" method="post">
                     <div class="form-group">
                         <label for="user">Name</label>
                         <input type="text" class="form-control"id="user"name="UserName" placeholder="Your Name..."required/>
@@ -119,17 +136,17 @@
                         </caption>
                         <thead>
                             <tr>
-                                <th class="text-center">Year</th>
-                                <th class="text-center">1st Quarter profits</th>
-                                <th class="text-center">2nd Quarter profits</th>
-                                <th class="text-center">3rd Quarter profits</th>
-                                <th class="text-center">4th Quarter profits</th>
-                                <th class="text-center" >Total</th>
+                                <th scope="col"class="text-center">Year</th>
+                                <th scope="row"class="text-center">1st Quarter profits</th>
+                                <th scope="row"class="text-center">2nd Quarter profits</th>
+                                <th scope="row"class="text-center">3rd Quarter profits</th>
+                                <th scope="row"class="text-center">4th Quarter profits</th>
+                                <th scope="row"class="text-center" >Total</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th>2012</th>
+                                <th scope="row">2012</th>
                                 <td>$1254564.32</td>
                                 <td>$1154545.67</td>
                                 <td>$1236566.98</td>
@@ -137,7 +154,7 @@
                                 <td>$5050934.29</td>
                             </tr>
                             <tr>
-                                <th>2013</th>
+                                <th scope="row">2013</th>
                                 <td>$1385475.87</td>
                                 <td>$1485690.23</td>
                                 <td>$1365568.54</td>
@@ -145,7 +162,7 @@
                                 <td>$5623344.75</td>
                             </tr>
                             <tr>
-                                <th>2014</th>
+                                <th scope="row">2014</th>
                                 <td>$1589878.76</td>
                                 <td>$1698986.45</td>
                                 <td>$1645456.32</td>
@@ -153,7 +170,7 @@
                                 <td>$6545657.88</td>
                             </tr>
                             <tr>
-                                <th>2015</th>
+                                <th scope="row">2015</th>
                                 <td>$1889776.22</td>
                                 <td>$1854565.71</td>
                                 <td>NA</td>
@@ -163,7 +180,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th class="text-right"colspan="5">Total</th>
+                                <th scope="row"class="text-right"colspan="5">Total</th>
                                 <td>$20978798.85</td>
                             </tr>
                         </tfoot>
