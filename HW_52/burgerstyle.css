@@ -14,14 +14,14 @@ body{
 	text-align: center;
 }
 .main{
-	background-image: url(images/background.png);
+	background-image: url(../images/background.png);
 	/*margin:60px;*/
 	border-radius:75px;
 	box-shadow: 0 0 20px 10px black inset;
 	padding: 20px 0;
 }
 .home{
-	background-image: url(images/home_background.png);
+	background-image: url(../images/home_background.png);
 }
 h1{
 	margin-top:0;
@@ -32,7 +32,7 @@ h2{
 	
 }
 header,footer{
-	background-image: url(images/bullet.png);
+	background-image: url(../images/bullet.png);
 	position: fixed;
     width: 100%;
     text-align: center;
@@ -92,7 +92,7 @@ a:hover{
 }
 
 ul{
-	list-style-image:url(images/bullet.png);
+	list-style-image:url(../images/bullet.png);
 }
 li a{
 	color:white;
