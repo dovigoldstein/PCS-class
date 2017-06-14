@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../normalize.css">
+	<link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#signup">Sign up</a></li>
+            <li><a href="#financials">Financials</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <header>
+            <h1>estuff</h1>
+            <h2>A <span class="italic">PCS</span> Company</h2>
+        </header>
+        <article id="products">
+            <h2>Products</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quis aliquam dolor ratione cumque repellendus praesentium ullam ipsum repellat laboriosam quia, fugiat fuga officiis, ipsam necessitatibus, minus omnis quibusdam nam!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequatur, incidunt cum vitae veritatis debitis a. Minima ducimus </p>
+            <div class="boxes">
+                <section class="box">
+                    <h3>Computers</h3>
+                    <img src="../images/macworld.jpg" alt="macworld"/>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt harum obcaecati pariatur illo, ipsa amet, laborum. Dolorum, asperiores velit quia.</p>
+                </section><!--
+            --><section class="box">
+                    <h3>Choir</h3>
+                        <div class="vid">
+                            <video controls poster="../images/shira.png">
+                                <source src="../images/El Hanaar Hazeh.mp4" />
+                            </video>
+                        </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt harum obcaecati pariatur illo, ipsa amet, laborum. Dolorum, asperiores velit quia.</p>
+                </section><!--
+            --><section class="box">
+                    <h3>Candy</h3>
+                    <img class="menupic"src="../images/candy.png" alt="candy"/>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt harum obcaecati pariatur illo, ipsa amet, laborum. Dolorum, asperiores velit quia.</p>
+                </section>
+            </div>
+        </article>
+        <aside id="signup">
+            <div class="form">
+                <h2>Sign Me Up!</h2>
+                <form action="signup.php" method="post">
+                    <div class="form-group">
+                        <label for="user">Name</label>
+                        <input type="text" id="user"name="UserName" placeholder="Your Name..."required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email"name="email" placeholder="Your Email..." required/>
+                    </div>
+                    <input type="submit" value="Sign me up!"/>
+                </form>
+            </div>
+        </aside>
+        <article id="financials">
+            <h2>Financials</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ullam rerum velit distinctio architecto itaque, cupiditate similique necessitatibus animi, fugit ab dolorum assumenda sint vitae quas dolore. Quod accusantium sapiente accusamus laborum. Accusantium ipsam aspernatur tempora possimus facere in consectetur repellat laborum est? Porro quos temporibus quod ipsum deleniti. Ex.</p>
+            <table>
+                <caption>Profits- By Quarter</caption>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>1st Quarter profits</th>
+                        <th>2nd Quarter profits</th>
+                        <th>3rd Quarter profits</th>
+                        <th>4th Quarter profits</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>2012</th>
+                        <td>$1254564.32</td>
+                        <td>$1154545.67</td>
+                        <td>$1236566.98</td>
+                        <td>$1368546.32</td>
+                        <td>$5050934.29</td>
+                    </tr>
+                    <tr>
+                        <th>2013</th>
+                        <td>$1385475.87</td>
+                        <td>$1485690.23</td>
+                        <td>$1365568.54</td>
+                        <td>$1545435.11</td>
+                        <td>$5623344.75</td>
+                    </tr>
+                    <tr>
+                        <th>2014</th>
+                        <td>$1589878.76</td>
+                        <td>$1698986.45</td>
+                        <td>$1645456.32</td>
+                        <td>$1789890.35</td>
+                        <td>$6545657.88</td>
+                    </tr>
+                    <tr>
+                        <th>2015</th>
+                        <td>$1889776.22</td>
+                        <td>$1854565.71</td>
+                        <td>NA</td>
+                        <td>NA</td>
+                        <td>$3654654.93</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="5">Total</th>
+                        <td>$20978798.85</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </article>
+        <article id="about">
+            <h2>About</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum voluptatem necessitatibus expedita sunt facere eos, sapiente? Vel dolorum, eos aliquid fuga repellat consequuntur? Perspiciatis perferendis laudantium voluptatem debitis deleniti ullam, error quis excepturi nihil, itaque eaque quod quos ea eligendi voluptatum dolores temporibus, quam doloremque, molestias amet. Fuga recusandae, repellat amet fugiat praesentium obcaecati eligendi laudantium vel minima, non delectus ratione dolore ipsa modi hic quaerat maxime! Eveniet magnam ullam optio, molestias voluptatem quidem repellendus culpa amet placeat eius porro iure! Iure magnam maiores nostrum labore vel eveniet vero, commodi nisi inventore ab libero et fugiat dolor, aliquid, dolorum autem perspiciatis laudantium error voluptas eaque velit exercitationem sunt illo minima! Facere quia at dolore asperiores officiis voluptate magni, et, quisquam quasi nostrum tempora. Tempore vel sequi ex commodi eum distinctio totam suscipit in iure, optio exercitationem laudantium necessitatibus libero, unde eligendi autem quis officia, ut rem repellat debitis! Beatae, voluptatem laborum unde neque, atque debitis ratione odit modi aperiam molestiae quibusdam harum veritatis ullam perferendis. Minus aspernatur error perspiciatis sapiente quia iusto voluptatem nam quis sed iste, mollitia quidem quod omnis ullam esse laboriosam voluptate incidunt provident quaerat commodi suscipit dolore quae. Cumque veritatis in inventore eveniet, deleniti, id quibusdam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ipsa accusamus blanditiis quidem vitae architecto illo fugit, dolores provident veniam nesciunt illum delectus, quis facilis laborum ea similique perferendis id repellat corrupti culpa. Facere esse dolores voluptatem qui sapiente. Delectus consectetur similique tempora nulla accusamus facilis eos rerum recusandae eius placeat maxime alias quasi ex a id quisquam facere fugit voluptatibus soluta quo nemo, deserunt nesciunt maiores ratione! Veniam aliquid modi, pariatur asperiores dolorum nostrum magni placeat beatae porro, assumenda labore temporibus neque fuga magnam sit incidunt quos, optio a obcaecati quisquam excepturi atque quo iste. Provident obcaecati velit cumque atque quibusdam praesentium accusantium, in optio laborum suscipit rem tempora eum, sapiente veniam ratione soluta nam labore ab fuga voluptates sequi iste fugiat saepe eius? Quisquam quibusdam id unde quasi corporis, adipisci beatae provident quam? Rem, dicta perferendis cum mollitia laboriosam reprehenderit explicabo sit exercitationem, blanditiis nemo doloribus dolorem omnis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, maxime quam accusamus est, deserunt impedit et beatae possimus, omnis facilis laudantium dolores expedita vero quasi facere! Tempore libero, officiis cum ex, animi natus vero a ducimus obcaecati eos unde quidem ratione architecto dolor et aliquid velit fuga consequatur. Laborum itaque, maiores animi impedit omnis, maxime id quidem explicabo temporibus molestiae incidunt beatae excepturi, quaerat harum ipsa esse! Facilis beatae recusandae explicabo dignissimos placeat, velit! Vitae perspiciatis error magni qui nesciunt autem, modi unde eveniet totam repudiandae voluptate hic, quae soluta optio, blanditiis labore atque nihil ratione esse. Odio ad laboriosam reiciendis sit dolorum aliquid vero molestiae facilis hic qui cumque, aperiam consequuntur temporibus, impedit fugiat eius accusamus at laudantium. Amet esse sint tempora voluptates cupiditate accusantium commodi aspernatur eveniet. Natus assumenda vero, ipsam sint hic nemo obcaecati, asperiores dolores nisi fugiat nihil cumque, optio cum velit laboriosam sunt facere! Dignissimos.</p>
+        </article>
+    </main>
+    <footer>&copy; ESTUFF 2015</footer>
+</body>
+</html>
