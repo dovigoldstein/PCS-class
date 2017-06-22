@@ -1,3 +1,11 @@
+<?php
+    $name1 = "George W. Bush";
+    $year1 = 2000;
+    $name2 = "Barack Obama";
+    $year2 = 2008;
+    $name3 = "Donald Trump";
+    $year3 = 2016;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,22 +16,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-    <?php
-        $name1 = "George W. Bush";
-        $year1 = 2000;
-        $name2 = "Barack Obama";
-        $year2 = 2008;
-        $name3 = "Donald Trump";
-        $year3 = 2016;
-    ?>
     <div class="container">
         <table class="table table-striped table-hover">
             <caption>
                 <h3 class="text-center">Presidents- Year Elected</h3>
             </caption>
             <thead>
-                <th>President</th>
-                <th>Year</th>
+                <tr>
+                    <th>President</th>
+                    <th>Year</th>
+                </tr>
             </thead>
             <tbody>
                 <tr>
