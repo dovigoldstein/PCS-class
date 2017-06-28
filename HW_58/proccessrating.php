@@ -14,7 +14,7 @@
         $errors[] = "Name is a required field";
     }
     if(isset($_POST['email'])) {
-        if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             $errors[] = "Invalid email format";
         }else{
             $email = $_POST['email'];
