@@ -14,7 +14,7 @@
         $errors[] = "Name is a required field";
     }
     if(isset($_POST['email'])) {
-        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors[] = "Invalid email format";
         }else{
             $email = $_POST['email'];
@@ -33,7 +33,7 @@
         $errors[] = "Age is a required field";
     }
     if(isset($_POST['rating'])) {
-        if(! is_numeric($_POST['rating']) || $_POST['rating'] < 1 || $_POST['rating'] > 10) {
+        if(!empty($_POST['rating']) && (! is_numeric($_POST['rating']) || $_POST['rating'] < 1 || $_POST['rating'] > 10)) {
             $errors[] = "Rating must be a number between 1 and 10";
         }else{
             $rating = $_POST['rating'];
