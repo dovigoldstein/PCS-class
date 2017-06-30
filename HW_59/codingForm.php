@@ -51,7 +51,7 @@
             border: none;
             box-shadow: none;
         }
-        span p{
+        p{
             display:inline-block;
         }
         
