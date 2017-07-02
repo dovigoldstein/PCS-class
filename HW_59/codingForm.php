@@ -51,10 +51,6 @@
             border: none;
             box-shadow: none;
         }
-        p{
-            display:inline-block;
-        }
-        
     </style>
 </head>
 
@@ -102,9 +98,7 @@
                 <div class="col-sm-offset-3 col-sm-9">
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <?php if(!isset($errors) && $_SERVER['REQUEST_METHOD'] === "POST"): ?>
-                    <span class="well text-primary">
-                        <p>Thank you for submitting your data</p>
-                    </span>
+                    <span class="well text-primary">Thank you for submitting your data</span>
                     <?php endif ?>
                 </div>
             </div>
