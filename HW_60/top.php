@@ -2,8 +2,10 @@
 <?php
     if(!empty($_GET["color"])) {
         $color = $_GET["color"];
+        $urlColor = urlencode($color);
     }else{
         $color = "black";
+        $urlColor = $color;
     }
     
     if(!empty($_GET["font"])) {
@@ -45,13 +47,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">PCS</a>
+                <a class="navbar-brand" href="index.php?color= <?= $urlColor . '&font=' . $font ?>">PCS</a>
             </div>
             <div class="collapse navbar-collapse" id="theLinks">
                 <ul class="nav navbar-nav">
-                    <li><a class="btn"href="page2.php">Two</a></li>
-                    <li><a class="btn"href="page3.php">Three</a></li>
-                    <li><a class="btn"href="page4.php">Four</a></li>
+                    <li><a class="btn" href="page2.php?color= <?= $urlColor . '&font=' . $font ?>">Two</a></li>
+                    <li><a class="btn"href="page3.php?color= <?= $urlColor . '&font=' . $font ?>">Three</a></li>
+                    <li><a class="btn"href="page4.php?color= <?= $urlColor . '&font=' . $font ?>">Four</a></li>
                 </ul>
             </div>
         </div>
