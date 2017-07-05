@@ -43,7 +43,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>HW_59</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
         .well{
@@ -87,7 +87,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="language" class="col-sm-3 control-label">Favorite Programming Language</label>
+                <label for="language" class="col-sm-3 control-label">Favorite Programming Language(s)</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="language" name="language" placeholder="PHP, Java, etc." required
                         value="<?= $language ?>"
