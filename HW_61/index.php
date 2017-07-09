@@ -38,7 +38,7 @@
 <body>
     <div class="container">
         <div class="jumbotron text-center">
-            <h1>Days in Month Calculaotr</h1>
+            <h1>Days in Month Calculator</h1>
         </div>
     <form class="form-horizontal" action="daysinmonth.php" method="post">
         <div class="form-group">
@@ -50,7 +50,7 @@
         <div class="form-group">
             <label for="font" class="control-label">Select Year</label>
             <select name="year" id="year" class="form-control">
-                <?php for($i = 0; $i < 2501; $i++) : ?>
+                <?php for($i = 1582; $i < 2501; $i++) : ?>
                 <option value="<?= $i ?>"
                 <?php if ($i === 2017) echo "selected"?>
                 ><?= $i ?>
