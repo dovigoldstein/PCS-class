@@ -4,7 +4,7 @@
         $color = $_GET["color"];
         $urlColor = urlencode($color);
     }else{
-        $color = "black";
+        $color = "#000000";
         $urlColor = $color;
     }
     
