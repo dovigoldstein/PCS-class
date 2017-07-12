@@ -8,7 +8,7 @@
         $query = "SELECT * FROM seforim";
         $results = $db->query($query);
         $seforim = $results->fetchall();
-        print_r($seforim);
+        // print_r($seforim);
     }catch(PDOException $e) {
         die("Something went wrong " . $e->getMessage());
     }
