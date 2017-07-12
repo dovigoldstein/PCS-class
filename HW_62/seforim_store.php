@@ -14,28 +14,37 @@
     }
 
     $seferName = "";
-    $seferPrice = "";
-    if(!empty($_GET['sefer'])){
-        $seferName = $_GET['sefer'];
-        try {
-            $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
-            $db = new PDO($cs, $user, $password, $options);
-            $query2 = "SELECT price FROM seforim WHERE name = '{$_GET['sefer']}' ";
-            $results2 = $db->query($query2);
-            $seferPrice = $results2->fetch();
-        }catch(PDOException $e) {
-            die("Something went wrong " . $e->getMessage());
-        }
-
-        // foreach($seforim as $sefer){
-        //     foreach ($sefer as $info) {
-        //         if ($info === $_GET['sefer'])
-        //             $seferPrice = $info;
-        //     }
-        // }
-    }else{
-
+    $seferPrice = 0;
+    foreach($seforim as $sefer){
+        $seferArray[]=$sefer['name'];     
     }
+    if(isset($_GET['sefer'])){
+        if(!empty($_GET['sefer'])){
+            if(in_array($_GET['sefer'],$seferArray)){
+                $seferName = $_GET['sefer'];
+                try {
+                    $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
+                    $db = new PDO($cs, $user, $password, $options);
+                    $query2 = "SELECT price FROM seforim WHERE name = '{$_GET['sefer']}' ";
+                    $results2 = $db->query($query2);
+                    $seferPrice = $results2->fetch();
+                }catch(PDOException $e) {
+                    die("Something went wrong " . $e->getMessage());
+                }
+
+                // foreach($seforim as $sefer){
+                //     if ($sefer['name'] === $_GET['sefer'])
+                //         $seferPrice = $sefer['price'];    
+                // }
+            }else{
+                echo "That is not a sefer";
+            }
+        }else{
+            echo "sefer is a required field";
+        }
+    }
+    
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,14 +61,14 @@
             <h1>Seforim Depot</h1>
         </div>
         <?php if(!empty($seferPrice)):?>
-        <h2><?= $seferName . " $" . $seferPrice['price'] ?></h2>
+        <h2 class="capitalize"><?= $seferName . " $" . $seferPrice['price'] ?></h2>
         <?php endif ?>
         <form class="form-horizontal">
             <div class="form-group">
                 <label for="font" class="control-label">Select a Sefer</label>
                 <select name="sefer" id="sefer" class="form-control">
                 <?php foreach($seforim as $sefer):?>
-                <option><?=$sefer['name']?></option>
+                <option class="capitalize"><?=$sefer['name']?></option>
                 <?php endforeach ?>
                 </select>
             </div>
