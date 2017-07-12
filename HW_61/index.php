@@ -1,6 +1,4 @@
 <?php
-    
-
     function monthOptions(){
         $months=[
             "January",
@@ -17,9 +15,21 @@
             "December"
         ];
         foreach($months as $month){
-            $options .= "<option value= $month>$month</option>";
+            $options .= "<option>$month</option>";
         }
         return $options;
+    }
+    function yearOptions(){
+        $years= "";
+        for($i = 1582; $i < 2501; $i++){
+            $years .="<option ";
+            if($i === 2017){
+                $years .="selected";
+            }
+            $years .="> $i</option>";
+        }
+        return $years;
+                
     }
 
 
@@ -50,12 +60,7 @@
         <div class="form-group">
             <label for="font" class="control-label">Select Year</label>
             <select name="year" id="year" class="form-control">
-                <?php for($i = 1582; $i < 2501; $i++) : ?>
-                <option value="<?= $i ?>"
-                <?php if ($i === 2017) echo "selected"?>
-                ><?= $i ?>
-                </option>
-                <?php endfor ?>
+                <?= yearOptions() ?>
             </select>
         </div>
         <div class="form-group">
