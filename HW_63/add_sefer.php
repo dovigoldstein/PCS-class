@@ -22,6 +22,7 @@
         }
     }
     if(isset($name,$price)){
+        include 'db.php';
         try {
             $db = new PDO("mysql:host=localhost;dbname=seforim_store", "user", 'password',[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
                 $insert = "INSERT INTO `seforim`(`name`, `price`) VALUES (?,?)";
@@ -31,27 +32,23 @@
                 $statement->execute();
                 $submitted = $name . " $" .number_format($price,2) . " has been added successfully ";
             } catch (PDOException $e) {
-                $errors[] = "Something went wrong " . $e->getMessage();
+                $systemError = "ERROR: " . $e->getMessage();
             }
     }
-    
+    include 'top.html';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
-<body>
-    <div class="container">
         <div class="jumbotron text-center">
             <h1>Seforim Depot</h1>
             <h2>Add a Sefer</h2>
         </div>
+        <?php if(!empty($errors)) : ?>
+            <ul >
+                <?php foreach($errors as $error) : ?>
+                <li class="alert text-danger"><?=$error?></li>
+                <?php endforeach?>
+            </ul>    
+        <?php endif ?>
         <form class="form-horizontal" method="post">
             <div class="form-group">
                 <label for="name" class="control-label">Enter Name</label>
@@ -66,20 +63,14 @@
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Add Sefer</button>
+                <?php if(!empty($submitted)) : ?>
+                    <span class="text-primary">
+                        <?= $submitted?>
+                    <?php elseif(!empty($systemError)) : ?>
+                    <span class="text-danger">
+                        <?= $systemError?>
+                <?php endif ?>
+                </span>
             </div>
         </form>
-        <?php if(!empty($submitted)) : ?>
-            <h2 class="text-center">
-                <?= $submitted?>
-            </h2>
-        <?php endif ?>
-
-        <?php if(!empty($errors)) : ?>
-            <h2 class="text-center alert alert-danger">something is wrong</h2>
-        <?php endif ?>
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</body>
-</html>
+<?php include 'bottom.html' ?>
