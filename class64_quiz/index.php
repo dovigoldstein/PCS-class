@@ -1,29 +1,31 @@
 <?php
     try {
         $db = new PDO("mysql:host=localhost;dbname=students", "user", 'password',[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-        $query = "SELECT a.name,a.score as score1, b.score as score2
-                FROM tests A, tests B
-                WHERE a.score <> b.score
-                AND a.name = b.name
-                GROUP BY a.name";
-                $statement = $db->prepare($query);
-                $statement->execute();
-                $students = $statement->fetchall(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             $systemError = "ERROR: " . $e->getMessage();
         }
-        // print_r($students);
-        if(! empty($_POST['student'])){
-            try {
-                $delete = "DELETE * FROM 'tests' WHERE 'name' = ? ";
-                $statement = $db->prepare($delete);
-                $statement->bindValue(1,$_POST['student']);
-                $statement->execute();
-                } catch (PDOException $e) {
-                    $systemError = "ERROR: " . $e->getMessage();
-                }
-        }
-
+    if(! empty($_POST['student'])){
+        try {
+            $delete = "DELETE FROM `tests` WHERE `name`= ? ";
+            $statement = $db->prepare($delete);
+            $statement->bindValue(1,$_POST['student']);
+            $statement->execute();
+            } catch (PDOException $e) {
+                $systemError = "ERROR: " . $e->getMessage();
+            }
+    }
+    try {
+    $query = "SELECT a.name,a.score as score1, b.score as score2
+            FROM tests A, tests B
+            WHERE a.score <> b.score
+            AND a.name = b.name
+            GROUP BY a.name";
+            $statement = $db->prepare($query);
+            $statement->execute();
+            $students = $statement->fetchall(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        $systemError = "ERROR: " . $e->getMessage();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
