@@ -1,18 +1,14 @@
 <?php
     if($_SERVER['REQUEST_METHOD'] === "POST"){
-        if(isset($_POST['name'])) {
-            if(empty($_POST['name']) ){
-                $errors[] = "Name is a required field";
-            }elseif(strlen($_POST['name']) > 255){
-                $errors[] = "Name must be less than 255 characters";
-            }else{
-                $name = $_POST['name'];
-            }
-        } else {
+        if(empty($_POST['name']) ){
             $errors[] = "Name is a required field";
+        }elseif(strlen($_POST['name']) > 255){
+            $errors[] = "Name must be less than 255 characters";
+        }else{
+            $name = $_POST['name'];
         }
-        if(isset($_POST['price'])) {
-            if(! is_numeric($_POST['price'])) {
+        if(! empty($_POST['price'])) {
+            if(! is_numeric($_POST['price']) || $_POST['price'] < .01) {
                 $errors[] = "Please enter a valid price in dollars";
             }else{
                 $price = $_POST['price'];
@@ -58,7 +54,7 @@
                 <label for="price" class="control-label">Enter Price</label>
                 <div class="input-group">
                     <div class="input-group-addon">$</div>
-                    <input type="number" step="0.01" name="price" id="price" placeholder="Amount" class="form-control"required/>
+                    <input type="number" min=".01"step="0.01" name="price" id="price" placeholder="Amount" class="form-control"required/>
                 </div>    
             </div>
             <div class="form-group">
