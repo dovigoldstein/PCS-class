@@ -17,7 +17,7 @@
     try {
     $query = "SELECT a.name,a.score as score1, b.score as score2
             FROM tests A, tests B
-            WHERE a.score <> b.score
+            WHERE a.id <> b.id
             AND a.name = b.name
             GROUP BY a.name";
             $statement = $db->prepare($query);
@@ -58,9 +58,9 @@
                 <form method="post">
                     <tr>
                         <td><input type="radio" name="student" value="<?=$student['name'] ?>" ></td>
-                        <td><?=$student['name']?></td>
-                        <td><?=$student['score1']?></td>
-                        <td><?=$student['score2']?></td>
+                        <?php foreach($student as $attribute) : ?>
+                        <td><?=$attribute?></td>
+                        <?php endforeach ?>
                     </tr>
                 
                 <?php endforeach ?>
@@ -71,10 +71,10 @@
 
             
         <?php if(!empty($systemError)) : ?>
-                    <span class="text-danger">
-                        <?= $systemError?>
-                <?php endif ?>
-                </span>
+        <span class="text-danger">
+        <?= $systemError?>
+        <?php endif ?>
+        </span>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
