@@ -3,5 +3,6 @@
     if($_SERVER['REQUEST_METHOD'] === "POST") {
         include 'models/index_proc_model.php';
     }
+    include 'models/filter.php';
     include 'views/index_view.php';
 ?>
