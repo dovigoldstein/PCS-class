@@ -20,4 +20,6 @@ function getLink($replace = []) {
     return $link;
 }
 
+
+
 ?>

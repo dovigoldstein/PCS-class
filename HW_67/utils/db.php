@@ -1,5 +1,5 @@
 <?php
-    $cs = "mysql:host=localhost;dbname=real_estate";
+$cs = "mysql:host=localhost;dbname=real_estate";
     $user = "user";
     $password = 'password';
 

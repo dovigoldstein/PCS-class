@@ -1,5 +1,11 @@
 <?php
     //include 'housesModel.php';
+    $prev_link = [];
+    if($offset >= 4)
+        array_push($prev_link, $prev_link['offset'] = $offset - 4);
+    $next_link = [];
+    if($offset <= (count($houses)-4))
+        array_push($next_link, $next_link['offset'] = $offset + 4);
     $styles = "
         .house img {
             width: 206px;
@@ -42,6 +48,15 @@
             <?php endforeach ?>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-offset-6 col-sm-3">
+            <a href="<?= getLink($prev_link) ?>" class="btn btn-default">Previous</a>
+        </div>
+        <div >
+            <a  href="<?= getLink($next_link) ?>" class="btn btn-default">Next</a>
+        </div>
+    </div>
+      
 <?php
 include 'bottom.php';
 ?>
