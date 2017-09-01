@@ -1,6 +1,6 @@
 <?php
 if(!empty($_COOKIE["TimeDateCookie"])){
-    $date = date('m/d/Y h:i:s a', $_COOKIE["TimeDateCookie"]);
+    $date = date('m/d/Y g:i:s a', $_COOKIE["TimeDateCookie"]);
     $message = "Welcome back!<br/>Last Visit: $date";
 }else{
     $message = "Welcome to our site!";
