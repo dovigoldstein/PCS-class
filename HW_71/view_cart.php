@@ -1,7 +1,10 @@
 <?php
 include 'Cart.php';
 if(!empty($_GET['cart_empty'])){
-    session_destroy();
+    session_unset();
+}
+if($_SERVER['REQUEST_METHOD'] === "POST"){
+    $cart->setQuantity($_POST['item'], $_POST['quantity']);
 }
 ?>
 <!DOCTYPE html>
@@ -21,23 +24,27 @@ if(!empty($_GET['cart_empty'])){
     </div>
     <div class="container">
         <?php if(!empty($_SESSION['cart'])) : ?>
-            <table class="table">
+            <table class="table thead-inverse">
                 <thead>
                     <tr>
-                    <th>Item</th>
+                    <th class="col-sm-3">Item</th>
                     <th>Quantity</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($cart->getItems() as $item => $quantity): ?>
-                    <tr>
-                        <td><?= $item ?></td>
-                        <td><?= $quantity ?></td>
-                    <tr>
-                    <?php endforeach?>
+                    <form method="post">
+                        <?php foreach($cart->getItems() as $item => $quantity): ?>
+                        <tr>
+                            <td><?= $item ?><input type="hidden" name="item" id="item"value="<?= $item ?>"></td>
+                            <td><input class="form-control"type="number" name="quantity" id="quantity" min=0 max=10 value=<?= $quantity ?>></td>
+                        <tr>
+                        <?php endforeach?>
                 </tbody>
-            </table>
-            <a class="btn btn-danger" href="view_cart.php?cart_empty=true">Empty Cart</a>
+            </table>    
+                        <a class="btn btn-danger" href="view_cart.php?cart_empty=true">Empty Cart</a>
+                        <button type="submit" class="btn btn-success">Save Changes</a>
+                    </form>
+            
         <?php else:?>
             <h2 class="text-center">Your Cart Is Empty</h2>
         <?php endif ?>      
