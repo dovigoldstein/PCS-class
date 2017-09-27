@@ -2,7 +2,7 @@ function isCaps(letter){
     return letter === letter.toUpperCase();
 }
 function isLower(letter){
-    return letter !== letter.toUpperCase();
+    return letter === letter.toLowerCase();
 }
 function mySomeFunction(arr, callback){
     for(var i = 0; i < arr.length; i++){
