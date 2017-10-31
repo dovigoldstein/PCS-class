@@ -1,4 +1,6 @@
 (function(){
+    "use strict";
+    /*global app*/
     for (var x = 0; x < 10; x++) {
         app.counter.increment();
     }

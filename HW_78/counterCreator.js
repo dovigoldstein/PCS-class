@@ -1,5 +1,5 @@
 var app = app || {};
-app.counterCreator = (function (counterCreator) {
+app.counterCreator = (function () {
     "use strict";
     var numCounters = 0;
     return {
@@ -8,7 +8,7 @@ app.counterCreator = (function (counterCreator) {
         },
         create : function (){
             var count = 0;
-            ++numCounters;
+            numCounters++;
             return {
                 getCount : function (){
                     return count;
@@ -19,7 +19,7 @@ app.counterCreator = (function (counterCreator) {
             };
         }
     };
-}(app.counterCreator || {}));
+}());
 
 
 

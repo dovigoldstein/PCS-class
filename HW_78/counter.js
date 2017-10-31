@@ -1,5 +1,5 @@
 var app = app || {};
-app.counter = (function (counter) {
+app.counter = (function () {
     "use strict";
     var count = 0;
     
@@ -11,4 +11,4 @@ app.counter = (function (counter) {
             count++;
         }
     };
-}(app.counter || {}));
+}());
