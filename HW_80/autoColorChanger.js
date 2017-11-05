@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    function rgbGenreator() {
+    function rgbGenrate() {
         var rgb = 'rgb(';
         var rgbArray = [];
         for (var x = 0; x < 3; x++) {
@@ -11,8 +11,8 @@
     }
 
     function changeColors() {
-        document.body.style.backgroundColor = rgbGenreator();
-        document.body.style.color = rgbGenreator();
+        document.body.style.backgroundColor = rgbGenrate();
+        document.body.style.color = rgbGenrate();
     }
 
     var startString = 'Change Colors';
