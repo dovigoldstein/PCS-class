@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(9, 1, 22);
+        }
+
+        button {
+            border-radius: 2px;
+            color: #ffffff;
+            height: 50px;
+            width: 132px;
+            font-size: 31px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        #reset {
+            background-color: rgb(253, 228, 2);
+        }
+
+        #hours,
+        #minutes,
+        #seconds,
+        #tenMilis {
+            width: 114px;
+        }
+
+        .clock {
+            /*centering clock*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 500px;
+            width: 800px;
+            box-sizing: border-box;
+            margin-top: -250px;
+            margin-left: -400px;
+            font-size: 100px;
+            background-color: rgb(70, 60, 60);
+            color: rgb(250, 250, 250);
+            text-align: center;
+            padding-top: 125px;
+        }
+
+        .numbersDiv {
+            display: inline-flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="numbersDiv">
+            <div id="hours">00</div>
+            <div>:</div>
+            <div id="minutes">00</div>
+            <div>:</div>
+            <div id="seconds">00</div>
+            <div>:</div>
+            <div id="tenMilis">00</div>
+        </div>
+        <div class="button ">
+            <button type="button" id="startStop">Start</button>
+            <button type="button" id="reset">Reset</button>
+        </div>
+    </div>
+    <script src='stopwatch1.js'></script>
+</body>
+
+</html>
