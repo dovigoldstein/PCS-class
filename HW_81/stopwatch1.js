@@ -37,16 +37,16 @@
                 }
                 elapsedTime = new Date(now - startTime);
 
-                var hoursString = elapsedTime.getHours() - 19;
-                var minutesString = elapsedTime.getMinutes();
-                var secondsString = elapsedTime.getSeconds();
-                var tenMilisString = Math.floor(elapsedTime.getMilliseconds() / 10);
+                var hoursDisplay = elapsedTime.getHours() - 19;
+                var minutesDisplay = elapsedTime.getMinutes();
+                var secondsDisplay = elapsedTime.getSeconds();
+                var tenMilisDisplay = Math.floor(elapsedTime.getMilliseconds() / 10);
 
-                hours.innerHTML = hoursString > 9 ? hoursString : '0' + hoursString;
-                minutes.innerHTML = minutesString > 9 ? minutesString : '0' + minutesString;
-                seconds.innerHTML = secondsString > 9 ? secondsString : '0' + secondsString;
-                tenMilis.innerHTML = tenMilisString > 9 ? tenMilisString : '0' + tenMilisString;
-                console.log(tenMilisString);
+                hours.innerHTML = hoursDisplay > 9 ? hoursDisplay : '0' + hoursDisplay;
+                minutes.innerHTML = minutesDisplay > 9 ? minutesDisplay : '0' + minutesDisplay;
+                seconds.innerHTML = secondsDisplay > 9 ? secondsDisplay : '0' + secondsDisplay;
+                tenMilis.innerHTML = tenMilisDisplay > 9 ? tenMilisDisplay : '0' + tenMilisDisplay;
+                console.log(tenMilisDisplay);
 
             }, 10);
             startStop.innerHTML = stopString;

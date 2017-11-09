@@ -107,15 +107,15 @@
                 }
                 elapsedTime = new Date(now - startTime);
 
-                var hoursString = elapsedTime.getHours() - 19;
-                var minutesString = elapsedTime.getMinutes();
-                var secondsString = elapsedTime.getSeconds();
-                var tenMilisString = Math.floor(elapsedTime.getMilliseconds() / 10);
+                var hoursDisplay = elapsedTime.getHours() - 19;
+                var minutesDisplay = elapsedTime.getMinutes();
+                var secondsDisplay = elapsedTime.getSeconds();
+                var tenMilisDisplay = Math.floor(elapsedTime.getMilliseconds() / 10);
 
-                hoursDiv.innerHTML = hoursString > 9 ? hoursString : '0' + hoursString;
-                minutesDiv.innerHTML = minutesString > 9 ? minutesString : '0' + minutesString;
-                secondsDiv.innerHTML = secondsString > 9 ? secondsString : '0' + secondsString;
-                tenMilisDiv.innerHTML = tenMilisString > 9 ? tenMilisString : '0' + tenMilisString;
+                hoursDiv.innerHTML = hoursDisplay > 9 ? hoursDisplay : '0' + hoursDisplay;
+                minutesDiv.innerHTML = minutesDisplay > 9 ? minutesDisplay : '0' + minutesDisplay;
+                secondsDiv.innerHTML = secondsDisplay > 9 ? secondsDisplay : '0' + secondsDisplay;
+                tenMilisDiv.innerHTML = tenMilisDisplay > 9 ? tenMilisDisplay : '0' + tenMilisDisplay;
             }, 10);
             startStopButton.innerHTML = stopString;
             startStopButton.style.backgroundColor = 'rgb(255,34,34)';
