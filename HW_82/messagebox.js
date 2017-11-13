@@ -53,7 +53,7 @@ pcs.messagebox = (function () {
         messageDiv.style.width = '400px';
         messageDiv.style.height = '100px';
         messageDiv.style.border = '1px solid blue';
-        messageDiv.style.position = 'absolute';
+        messageDiv.style.position = 'fixed';
         messageDiv.style.marginLeft = '-200px';
         messageDiv.style.marginTop = '-50px';
         messageDiv.style.boxSizing = 'border-box';
@@ -61,14 +61,16 @@ pcs.messagebox = (function () {
         if (isModal) {
             messageDiv.style.left = '50%';
             messageDiv.style.top = '50%';
-            messageDiv.style.zIndex = (Zindex++) + '';
         } else {
             messageDiv.style.left = left + '%';
             messageDiv.style.top = top + '%';
             messageDiv.addEventListener('click', function () {
-                messageDiv.style.zIndex = (Zindex++) + '';
+                if (messageDiv) {
+                    messageDiv.style.zIndex = (Zindex++) + '';
+                }
             });
         }
+        messageDiv.style.zIndex = (Zindex++) + '';
         buttonDiv.style.position = 'absolute';
         buttonDiv.style.bottom = '6px';
         buttonDiv.style.textAlign = 'center';
@@ -112,7 +114,7 @@ pcs.messagebox = (function () {
                 left += 0.3;
             }
             show(input.value);
-            // input.value = '';
+            input.value = '';
         }
     });
 
