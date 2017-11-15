@@ -1,10 +1,12 @@
 alert(name);
 function greaterThan( a, b){
+    var answer;
     if(!isNaN(a + b)){
-        return a > b;
+        answer = a > b;
     }else{
-        return 'Please enter two numbers';
+        answer = 'Please enter two numbers';
     }
+    return answer;
         
 }
 console.log(greaterThan( 2, 1));

@@ -1,7 +1,8 @@
 var theMonthUtils = (function () {
     'use strict';
 
-    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July','August','September','October','November','December'];
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July','August',
+    'September','October','November','December'];
 
     return {
         getMonthName: function (num) {
@@ -13,7 +14,7 @@ var theMonthUtils = (function () {
                     return i;
                 }
             }
-            return "NO SUCH DAY!";
+            return -1;
         }
     };
 }());

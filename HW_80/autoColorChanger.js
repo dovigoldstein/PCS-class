@@ -6,8 +6,7 @@
         for (var x = 0; x < 3; x++) {
             rgbArray.push(Math.floor(Math.random() * 256));
         }
-        rgb += rgbArray.join(',') + ')';
-        return rgb;
+        return rgb += rgbArray.join(',') + ')';
     }
 
     function changeColors() {

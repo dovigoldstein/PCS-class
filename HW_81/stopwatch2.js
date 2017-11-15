@@ -10,6 +10,7 @@
     var theInterval;
     var savedTime;
     var elapsedTime;
+    var active = false;
 
 
     var clockDiv = createElement("div");
@@ -99,6 +100,7 @@
             startStopButton.innerHTML = restartString;
             startStopButton.style.backgroundColor = 'rgb(12, 128, 17)';
         } else {
+            active = true;
             var startTime = new Date();
             theInterval = setInterval(function () {
                 var now = new Date().getTime();
@@ -122,15 +124,18 @@
         }
     });
     resetButton.addEventListener('click', function () {
-        hoursDiv.innerHTML = '00';
-        minutesDiv.innerHTML = '00';
-        secondsDiv.innerHTML = '00';
-        tenMilisDiv.innerHTML = '00';
-        clearInterval(theInterval);
-        theInterval = 0;
-        savedTime = 0;
-        startStopButton.innerHTML = startString;
-        startStopButton.style.backgroundColor = 'rgb(12, 128, 17)';
+        if (active) {
+            active = false;
+            hoursDiv.innerHTML = '00';
+            minutesDiv.innerHTML = '00';
+            secondsDiv.innerHTML = '00';
+            tenMilisDiv.innerHTML = '00';
+            clearInterval(theInterval);
+            theInterval = 0;
+            savedTime = 0;
+            startStopButton.innerHTML = startString;
+            startStopButton.style.backgroundColor = 'rgb(12, 128, 17)';
+        }
     });
 
 

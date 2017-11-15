@@ -13,6 +13,7 @@
     var theInterval;
     var savedTime;
     var elapsedTime;
+    var active = false;
 
     function get(id) {
         return document.getElementById(id);
@@ -29,6 +30,7 @@
             startStop.innerHTML = restartString;
             startStop.style.backgroundColor = 'rgb(12, 128, 17)';
         } else {
+            active = true;
             var startTime = new Date();
             theInterval = setInterval(function () {
                 var now = new Date().getTime();
@@ -54,16 +56,18 @@
         }
     });
     reset.addEventListener('click', function () {
-        hours.innerHTML = '00';
-        minutes.innerHTML = '00';
-        seconds.innerHTML = '00';
-        tenMilis.innerHTML = '00';
-        clearInterval(theInterval);
-        theInterval = 0;
-        savedTime = 0;
-        startStop.innerHTML = startString;
-        startStop.style.backgroundColor = 'rgb(12, 128, 17)';
+        if (active) {
+            active = false;
+            hours.innerHTML = '00';
+            minutes.innerHTML = '00';
+            seconds.innerHTML = '00';
+            tenMilis.innerHTML = '00';
+            clearInterval(theInterval);
+            theInterval = 0;
+            savedTime = 0;
+            startStop.innerHTML = startString;
+            startStop.style.backgroundColor = 'rgb(12, 128, 17)';
+        }
     });
-
 
 }());
