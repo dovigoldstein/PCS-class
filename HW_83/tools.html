@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="one">
+        <h1>Section One</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora accusamus beatae veniam, voluptatem aliquid facilis
+            rerum quibusdam dolorem magnam sed quidem dolore blanditiis illum harum officia id eos excepturi? Magnam, inventore.
+            Impedit, assumenda nobis minus accusamus earum quam magnam! Sequi autem, dolores labore placeat magnam voluptas
+            quam culpa consectetur saepe dolorem expedita fugiat excepturi velit, sint quasi omnis nisi. Ab voluptatibus
+            alias facere quisquam odio consequatur, explicabo dolores, dolore quasi praesentium recusandae unde nulla numquam
+            blanditiis veritatis ullam itaque obcaecati est quam fugit. Ullam labore libero sit in nemo. Repellat illum quasi
+            optio illo inventore voluptates quod quo reiciendis, dolorum, dolores molestiae quibusdam veritatis sit asperiores
+            maiores voluptatibus iusto ratione tenetur esse vel, ea deleniti. Animi recusandae cupiditate quos magni voluptatibus
+            libero hic laudantium tempora delectus quaerat, dolorem illum quibusdam ratione a aut rerum porro ea exercitationem
+            omnis officia consequuntur repudiandae illo placeat officiis! Nihil magnam incidunt praesentium laborum eius
+            asperiores, est obcaecati nisi earum reiciendis corporis molestias nulla, perspiciatis sequi exercitationem,
+            ad explicabo aspernatur voluptates voluptate impedit tempore maxime? Tempore saepe eum hic quidem praesentium
+            minus corrupti similique dolores alias eligendi cum error quos asperiores, omnis ullam doloribus earum officia
+            quisquam beatae dolore ipsam laborum ex, illum facere! Nam.</p>
+    </div>
+    <div id="two">
+        <h1>Section Two</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora accusamus beatae veniam, voluptatem aliquid facilis
+            rerum quibusdam dolorem magnam sed quidem dolore blanditiis illum harum officia id eos excepturi? Magnam, inventore.
+            Impedit, assumenda nobis minus accusamus earum quam magnam! Sequi autem, dolores labore placeat magnam voluptas
+            quam culpa consectetur saepe dolorem expedita fugiat excepturi velit, sint quasi omnis nisi. Ab voluptatibus
+            alias facere quisquam odio consequatur, explicabo dolores, dolore quasi praesentium recusandae unde nulla numquam
+            blanditiis veritatis ullam itaque obcaecati est quam fugit. Ullam labore libero sit in nemo. Repellat illum quasi
+            optio illo inventore voluptates quod quo reiciendis, dolorum, dolores molestiae quibusdam veritatis sit asperiores
+            maiores voluptatibus iusto ratione tenetur esse vel, ea deleniti. Animi recusandae cupiditate quos magni voluptatibus
+            libero hic laudantium tempora delectus quaerat, dolorem illum quibusdam ratione a aut rerum porro ea exercitationem
+            omnis officia consequuntur repudiandae illo placeat officiis! Nihil magnam incidunt praesentium laborum eius
+            asperiores, est obcaecati nisi earum reiciendis corporis molestias nulla, perspiciatis sequi exercitationem,
+            ad explicabo aspernatur voluptates voluptate impedit tempore maxime? Tempore saepe eum hic quidem praesentium
+            minus corrupti similique dolores alias eligendi cum error quos asperiores, omnis ullam doloribus earum officia
+            quisquam beatae dolore ipsam laborum ex, illum facere! Nam.</p>
+    </div>
+    <input type="button" id="button" value="Press Me!">
+    <script src="tools.js"></script>
+    <script>
+        var sectionTwo = pcs.tools.wrap('two');
+        // var sectionTwo = pcs.tools.wrap('two').hide();
+        // pcs.tools.wrap("button").click(function () {
+        //     sectionTwo.show().pulsate();
+        // });  
+
+        pcs.tools.wrap("button").click(function () {
+            if (window.getComputedStyle(document.getElementById("two")).getPropertyValue("display") === "none") {
+                sectionTwo.show();
+            } else {
+                sectionTwo.hide();
+            }
+        });
+    </script>
+</body>
+
+</html>
