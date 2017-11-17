@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #thing1 {
+            display: none;
+        }
+
+        #thing2 {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="theDonald">Donald Trump</h1>
+    <h1 id="pcs">PCS</h1>
+    <h2 id="thing1">Thing #1</h2>
+    <h2 id="thing2">Thing #2</h2>
+    <h2 id="thing3">Thing #3</h2>
+    <button id='testButton'>Test Button</button>
+    <script src="tools.js"></script>
+    <script>
+        /*var dt = pcs.tools.get("theDonald");
+        pcs.tools.setCss(dt, "color", "red");*/
+        var dt = pcs("theDonald");
+        dt.css("color", "red");
+        dt.css("backgroundColor", "black");
+        dt.pulsate();
+        pcs("pcs")
+            .css("color", "yellow")
+            .css("backgroundColor", "green")
+            // .pulsate()
+            .click(function (event) {
+                console.log("PCS was clicked", event);
+            })
+            .click(function () {
+                console.log("PCS was clicked - no event accepted");
+            });
+        var thing1 = pcs('thing1')
+            .hide()
+            .css("backgroundColor", "pink")
+            .click(function () {
+                thing1.hide();
+                thing2.show();
+                thing3.hide();
+            });
+        var thing2 = pcs('thing2')
+            .css("backgroundColor", "purple")
+            .click(function () {
+                thing2.hide();
+                thing1.show();
+                thing3.show();
+            });
+        var thing3 = pcs("thing3");
+        var testButton = pcs('testButton')
+            .click(function () {
+                var counter = testButton.getData('clicks') || 0;
+                testButton.setData('clicks', ++counter);
+                console.log(counter);
+            });
+    </script>
+</body>
+
+</html>
