@@ -46,12 +46,12 @@ pcs.tools = (function () {
                     return this;
                 },
                 hide: function () {
-                    display = window.getComputedStyle(elem).getPropertyValue("display");
+                    display = getComputedStyle(elem).getPropertyValue("display");
                     setCss(elem, "display", "none");
                     return this;
                 },
                 show: function () {
-                    setCss(elem, "display", display);
+                    this.setCss("display", display);
                     return this;
                 }
             };

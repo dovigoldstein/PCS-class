@@ -46,14 +46,13 @@
     <input type="button" id="button" value="Press Me!">
     <script src="tools.js"></script>
     <script>
-        var sectionTwo = pcs.tools.wrap('two');
         // var sectionTwo = pcs.tools.wrap('two').hide();
         // pcs.tools.wrap("button").click(function () {
         //     sectionTwo.show().pulsate();
-        // });  
-
+        // });
+        var sectionTwo = pcs.tools.wrap('two');
         pcs.tools.wrap("button").click(function () {
-            if (window.getComputedStyle(document.getElementById("two")).getPropertyValue("display") === "none") {
+            if (getComputedStyle(document.getElementById("two")).getPropertyValue("display") === "none") {
                 sectionTwo.show();
             } else {
                 sectionTwo.hide();
