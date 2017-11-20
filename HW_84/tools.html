@@ -31,7 +31,7 @@
         var dt = pcs("theDonald");
         dt.css("color", "red");
         dt.css("backgroundColor", "black");
-        dt.pulsate();
+        // dt.pulsate();
         pcs("pcs")
             .css("color", "yellow")
             .css("backgroundColor", "green")
@@ -60,9 +60,8 @@
         var thing3 = pcs("thing3");
         var testButton = pcs('testButton')
             .click(function () {
-                var counter = testButton.getData('clicks') || 0;
-                testButton.setData('clicks', ++counter);
-                console.log(counter);
+                testButton.setData('clicks', testButton.getData('clicks') + 1 || 1);
+                console.log(testButton.getData('clicks'));
             });
     </script>
 </body>

@@ -17,12 +17,11 @@ var pcs = (function () {
 
         return {
             css: function (property, value) {
-                if (value) {
+                if (arguments.length > 1) {
                     setCss(elem, property, value);
                     return this;
-                } else {
-                    return getComputedStyle(elem).getPropertyValue(property);
                 }
+                return getComputedStyle(elem).getPropertyValue(property);
             },
             pulsate: function () {
                 var fontSize = parseInt(this.css('font-size')),
@@ -75,6 +74,14 @@ var pcs = (function () {
             },
             getData: function (key) {
                 return data[key];
+            },
+            data: function (key, value) {
+                if (arguments.length > 1) {
+                    data[key] = value;
+                    return this;
+                }
+                return data[key];
+
             }
         };
     };
