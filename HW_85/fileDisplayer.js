@@ -3,9 +3,11 @@
     "use strict";
 
     var loadingDiv = $('<div><img src="../images/loading.gif" alt="Loading"/></div>');
+    var theFile = $('#fileChooser');
     $('#submit').click(function () {
         $('#fileDisplayer').text('');
-        $.get($('#fileChooser').val(), function (loadedData) {
+        var fileToLoad = theFile.val();
+        $.get(fileToLoad, function (loadedData) {
             setTimeout(function () {
                 $('#fileDisplayer').text(loadedData);
             }, 2000);
@@ -29,16 +31,16 @@
     });
 
     function show(msg) {
-        var messageDiv = $('<div><span>' + msg + '</span><div id="buttonDiv"><input type="button" value="OK"' +
-            'id="okButton"></div></div>').appendTo('body');
+        var messageDiv = $('<div><span>' + msg + '</span><div class="buttonDiv"><input type="button" value="OK"' +
+            'class="okButton"></div></div>').appendTo('body');
         messageDiv.css({
             'background-color': 'lightblue', 'padding': '20px 20px 10px', 'width': '400px', 'height': '100px',
             'border': '1px solid blue', 'margin-left': '-200px', 'margin-top': '-50px', 'box-sizing': 'border-box',
             'display': 'inline-block', 'left': '50%', 'top': '50%', 'position': 'absolute',
         });
-        $('#buttonDiv').css({ 'padding-top': '25px', 'text-align': 'center', 'width': '100%', 'margin-left': '-20px' });
+        $('.buttonDiv').css({ 'padding-top': '25px', 'text-align': 'center', 'width': '100%', 'margin-left': '-20px' });
 
-        $('#okButton').click(function () {
+        $('.okButton').click(function () {
             messageDiv.remove();
         });
     }
