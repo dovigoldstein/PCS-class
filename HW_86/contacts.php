@@ -9,5 +9,4 @@ try {
     } catch (PDOException $e) {
         $systemError = "ERROR: " . $e->getMessage();
     }
-
 ?>

@@ -54,18 +54,15 @@
 
     $('#loadFromJSON').click(function () {
         $.get('contacts.json', function (loadedContacts) {
-            loadedContacts.forEach(function (element) {
-                addContact(element);
-            });
+            loadedContacts.forEach(addContact);
         }).fail(function (xhr, statusCode, statusText) {
             console.log(xhr, statusCode, statusText);
         });
     });
+
     $('#loadFromDB').click(function () {
         $.get('contacts.php', function (loadedContacts) {
-            JSON.parse(loadedContacts).forEach(function (element) {
-                addContact(element);
-            });
+            JSON.parse(loadedContacts).forEach(addContact);
         }).fail(function (xhr, statusCode, statusText) {
             console.log(xhr, statusCode, statusText);
         });
