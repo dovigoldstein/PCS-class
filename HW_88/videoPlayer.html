@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <style>
+        #theVideo {
+            display: none;
+        }
+
+        #videoList {
+            overflow-y: scroll;
+            height: 464px;
+        }
+
+        .card-body {
+            padding: 7px;
+            font-size: 12px;
+        }
+
+        .vids:hover {
+            box-shadow: inset 0 0 20px #2b6296;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-center text-white bg-primary p-4 mb-2">
+        <h1>My Videos</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div id="videoDisplay" class="col-9">
+                <img id="clickMessage" src="../images/videoImage.png">
+                <video id="theVideo" width="100%" poster="" controls>
+                    <source src="" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-2 offset-md-1">
+                <ul id="videoList" class="list-unstyled"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="videoPlayer.js"></script>
+    <!-- bootstrap links -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

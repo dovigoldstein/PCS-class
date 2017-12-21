@@ -1,0 +1,22 @@
+[
+    {
+        "title": "8th Day - Torah",
+        "url": "../images/Torah.mp4",
+        "poster": "../images/torahCover.jpg"
+    },
+    {
+        "title": "8th Day - Miracle Of Light",
+        "url": "../images/MiracleOfLight.mp4",
+        "poster": "../images/miracleOfLightCover.jpg"
+    },
+    {
+        "title": "Mordechai Shapiro - Lecha",
+        "url": "../images/Lecha.mp4",
+        "poster": "../images/lechaCover.jpg"
+    },
+    {
+        "title": "8th Day - Moses In Me",
+        "url": "../images/MosesInMe.mp4",
+        "poster": "../images/mosesInMeCover.jpg"
+    }
+]
