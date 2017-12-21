@@ -5,12 +5,12 @@
     var options = $("#options");
 
 
-    $.get("getRecipes.php", function (loadedRecipes) {
-        JSON.parse(loadedRecipes).forEach(function (element) {
-            $('<option value = ' + element.id + '>' + element.name + '</option>')
-                .appendTo(options);
-        });
-    });
+    // $.get("getRecipes.php", function (loadedRecipes) {
+    //     JSON.parse(loadedRecipes).forEach(function (element) {
+    //         $('<option value = ' + element.id + '>' + element.name + '</option>')
+    //             .appendTo(options);
+    //     });
+    // });
     $('#recipeDisplay').hide();
 
     options.on('change', function () {

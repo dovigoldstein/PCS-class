@@ -1,3 +1,9 @@
+<?php
+require 'db.php';
+$query = "SELECT `id`, `name` FROM recipes";
+$statement = $db->query($query);
+$recipes = $statement->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,11 +24,16 @@
         <div class="row mt-3">
             <select id="options" class="form-control form-control-lg">
                 <option class="d-none" disabled selected value>SELECT A RECIPE</option>
+                <?php foreach($recipes as $recipe) : ?>
+                <option value="<?= $recipe['id'] ?>">
+                <?= $recipe['name'] ?>
+                </option>
+                <?php endforeach ?>
             </select>
         </div>
         <div id="recipeDisplay"class="row justify-content-md-center mt-3">
             <div class="card" style="width: 300px;">
-                <img id="image" class="card-img-top" src="">
+                <img id="image" class="card-img-top" src="" alt="">
                 <div class="card-body">
                     <h4 id="recipeName"class="card-title"></h4>
                     <ul id="ingredients"class="list-group"></ul>
