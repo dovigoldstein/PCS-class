@@ -1,0 +1,14 @@
+[
+    {
+        "description": "Candy",
+        "url": "../images/candy.png"
+    },
+    {
+        "description": "Mac World",
+        "url": "../images/macworld.jpg"
+    },
+    {
+        "description": "Shira",
+        "url": "../images/shira.png"
+    }
+]
