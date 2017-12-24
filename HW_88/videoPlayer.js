@@ -6,9 +6,10 @@
     var theVideo = $('#theVideo');
 
     function setPlaylist(video) {
-        return $("<li><div class='vids card bg-secondary mb-1' style='width: 98%'>" +
-            "<img class='card-img-top' src='" + video.poster + "'><div class='card-body p-1>" +
-            "<p class='card-title mb-0'>" + video.title + "</p></div></div></li>").appendTo(videoList);
+        return $("<li><div class='vids card bg-secondary mb-1 text-white' style='width: 98%'>" +
+            "<img class='card-img-top' src='" + (video.poster || "../images/default.png") +
+            "'><div class='card-body p-1><p class='card-title mb-0'>" + video.title +
+            "</p></div></div></li>").appendTo(videoList);
     }
 
     function setVideo(url) {
