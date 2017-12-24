@@ -30,9 +30,7 @@
             }
         }
 
-        #playPause:hover,
-        .carousel-control-prev:hover,
-        .carousel-control-next:hover {
+        #playPause:hover {
             cursor: pointer;
         }
     </style>
@@ -46,20 +44,15 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-md-10 offset-md-1">
-                <div id="myCarousel" class="carousel slide" data-interval="0">
+                <div class="carousel slide" data-ride="carousel" data-interval="500">
                     <div id="carouselPics" class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img id="theImage" class="d-block w-100" src="" alt="">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h3 id="theCaption"></h3>
-                            </div>
-                        </div>
+
                     </div>
-                    <a id="prev" class="carousel-control-prev" role="button">
+                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a id="next" class="carousel-control-next" role="button">
+                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -75,7 +68,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="imageGalleryNoBs.js"></script>
+    <script src="imageGalleryBootstrap.js"></script>
     <!-- bootstrap links -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
         crossorigin="anonymous"></script>
