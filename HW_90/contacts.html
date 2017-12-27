@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        label {
+            display: inline-block;
+            width: 40px;
+        }
+
+        button {
+            width: 102px;
+        }
+
+        #addContactForm,
+        #updateContactForm {
+            display: none;
+            background-color: lightblue;
+            padding: 8px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 218px;
+            height: 112px;
+            margin-left: -109px;
+            margin-top: -56px
+        }
+
+        #addContactForm {
+            background-color: lightblue;
+        }
+
+        #updateContactForm {
+            background-color: rgb(251, 255, 0);
+        }
+
+        #buttonDiv {
+            float: left;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="buttonDiv">
+        <button id="add">Add Contact</button>
+    </div>
+    <table id="contactTable">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="5">No contacts</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form id="addContactForm">
+        <div>
+            <label for="addFirst">First</label>
+            <input id="addFirst" />
+        </div>
+        <div>
+            <label for="addLast">Last</label>
+            <input id="addLast" required/>
+        </div>
+        <div>
+            <label for="addEmail">Email</label>
+            <input type="email" id="addEmail" />
+        </div>
+        <div>
+            <label for="addPhone">Phone</label>
+            <input id="addPhone" />
+        </div>
+        <div class="buttons">
+            <button>Add</button>
+            <button type="button" id="cancelAdd">Cancel</button>
+        </div>
+    </form>
+
+    <form id="updateContactForm">
+        <input type="hidden" id="updateId">
+        <div>
+            <label for="updateFirst">First</label>
+            <input id="updateFirst" />
+        </div>
+        <div>
+            <label for="updateLast">Last</label>
+            <input id="updateLast" required/>
+        </div>
+        <div>
+            <label for="updateEmail">Email</label>
+            <input type="email" id="updateEmail" />
+        </div>
+        <div>
+            <label for="updatePhone">Phone</label>
+            <input id="updatePhone" />
+        </div>
+        <div class="buttons">
+            <button>Update</button>
+            <button type="button" id="cancelUpdate">Cancel</button>
+        </div>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="messageBox.js"></script>
+    <script src="contacts.js"></script>
+</body>
+
+</html>
