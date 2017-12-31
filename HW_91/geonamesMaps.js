@@ -4,6 +4,7 @@
 
     var input = $('#input'),
         go = $('#go'),
+        noResults = '<li id="noResults" class="text-center text-secondary">No results</li>',
         resultsList = $('#resultsList'),
         markers = [],
         infoWindows = [],
@@ -25,9 +26,7 @@
 
                     // clearing old query results
                     resultsList.empty();
-                    if (markers.length > 0) {
-                        resetMarkers();
-                    }
+                    resetMarkers();
 
                     // reset bounds for each query
                     var bounds = new google.maps.LatLngBounds();
@@ -40,7 +39,7 @@
                         var location = { lat: lat, lng: lng };
                         addResult(result)
                             .click(function () {
-                                panToLocation(lat, lng);
+                                panToLocation(lat, lng, 14);
                                 closeinfoWindows(infoWindow);
                                 infoWindow.open(map, marker);
                             });
@@ -58,6 +57,7 @@
                         var infoWindow = new google.maps.InfoWindow({
                             content: '<h6>' + marker.title + '</h6>' +
                                 '<p>' + marker.snippet + '</p>' +
+                                // it was trying to find url in localhost so...
                                 '<a class="nav-link p-0" href="http://' +
                                 result.wikipediaUrl.replace("http://", "") +
                                 '">Read More On Wikipedia</a>',
@@ -76,7 +76,10 @@
                         map.fitBounds(bounds);
                     });
                 } else {
-                    console.log('no data');
+                    resetMarkers();
+                    panToLocation(0, 0, 2);
+                    resultsList.empty();
+                    resultsList.append(noResults);
                 }
             }).fail(function (xhr, statusCode, statusText) {
                 console.log(xhr, statusCode, statusText);
@@ -87,19 +90,17 @@
 
 
     function initMap() {
-        map = new google.maps.Map(mapDiv, {
-            center: { lat: 0, lng: 0 },
-            zoom: 2
-        });
+        map = new google.maps.Map(mapDiv, {});
+        panToLocation(0, 0, 2);
     }
 
-    function panToLocation(newLat, newLng) {
+    function panToLocation(lat, lng, zoom) {
         map.setCenter({
-            lat: newLat,
-            lng: newLng
+            lat: lat,
+            lng: lng
         });
 
-        map.setZoom(14);
+        map.setZoom(zoom);
     }
 
     function resetMarkers() {
@@ -113,6 +114,7 @@
         });
         infoWindows = [];
     }
+
     function closeinfoWindows(infoWindow) {
         infoWindows.forEach(function (window) {
             if (window !== infoWindow) {
@@ -121,5 +123,6 @@
         });
     }
 
+    resultsList.append(noResults);
     initMap();
 }());

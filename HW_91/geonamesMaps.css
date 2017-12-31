@@ -1,0 +1,36 @@
+body {
+    background: #e0dfe0;
+}
+
+img {
+    height: 100px;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+}
+
+#resultsList {
+    overflow-y: scroll;
+    height: 438px;
+    background: white;
+}
+
+.card-body {
+    padding-bottom: 7px;
+    font-size: 10px;
+}
+
+.result:hover {
+    box-shadow: inset 0 0 25px #2b6296;
+    cursor: pointer;
+}
+
+.result:active {
+    box-shadow: inset 0 0 50px #1b4266;
+}
+
+ul li:not(:last-of-type) {
+    margin-bottom: 1px;
+}
