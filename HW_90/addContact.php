@@ -1,5 +1,4 @@
 <?php
-header("Access-Control-Allow-Origin: http://localhost");
 require 'db.php';
 function getParam($param) {
     if(! empty($_POST[$param])) {

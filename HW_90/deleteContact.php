@@ -1,5 +1,4 @@
 <?php
-header("Access-Control-Allow-Origin: http://localhost");
 require 'db.php';
 if(! empty($_POST["id"])) {
     $id = $_POST["id"];
