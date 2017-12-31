@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+        crossorigin="anonymous">
+    <style>
+        body {
+            background: #e0dfe0;
+        }
+
+        img {
+            height: 100px;
+        }
+
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+
+        #resultsList {
+            overflow-y: scroll;
+            height: 438px;
+            background: white;
+        }
+
+        .card-body {
+            padding-bottom: 7px;
+            font-size: 10px;
+        }
+
+        .result:hover {
+            box-shadow: inset 0 0 25px #2b6296;
+            cursor: pointer;
+        }
+
+        .result:active {
+            box-shadow: inset 0 0 50px #1b4266;
+        }
+
+        ul li:not(:last-of-type) {
+            margin-bottom: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-center text-white bg-primary p-4 mb-2">
+        <h1>geoNames</h1>
+    </div>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col col-md-2">
+                <div class="input-group mb-3">
+                    <input type="text" id="input" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button id="go" class="btn btn-primary" type="button">Go</button>
+                    </div>
+                </div>
+                <ul id="resultsList" class="list-unstyled">
+                    <li id="noResults" class="text-center text-secondary">No results</li>
+                </ul>
+            </div>
+            <div class="col col-md-10">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- google maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD11SfBwd9o9PCTHkx__RuFuPe8zCNFr3Y"></script>
+    <!-- ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- my script -->
+    <script src="geonamesMaps.js"></script>
+    <!-- bootstrap links -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
