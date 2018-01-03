@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>geoMaps</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
         crossorigin="anonymous">
     <link rel="stylesheet" href="geonamesMaps.css">
+    <link rel="icon" href="../images/markerIcon.png">
 </head>
 
 <body>
     <div class="text-center text-white bg-primary p-4">
-        <h1>geoNames</h1>
+        <h1>geoMaps</h1>
     </div>
     <div class="container">
-        <div class="row justify-content-md-center align-middle mt-4">
+        <div class="row mt-4">
             <div class="col col-md-2">
                 <div class="input-group mb-3">
                     <input type="text" id="input" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
@@ -24,7 +25,7 @@
                         <button id="go" class="btn btn-primary" type="button">Go</button>
                     </div>
                 </div>
-                <ul id="resultsList" class="list-unstyled"></ul>
+                <ul id="resultsList" class="list-unstyled rounded"></ul>
             </div>
             <div class="col col-md-10">
                 <div id="map"></div>

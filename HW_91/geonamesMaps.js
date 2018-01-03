@@ -6,20 +6,24 @@
         go = $('#go'),
         noResults = '<li id="noResults" class="text-center text-secondary">No results</li>',
         resultsList = $('#resultsList'),
+        labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        labelIndex,
         markers = [],
         infoWindows = [],
         mapDiv = document.getElementById('map'),
         map;
 
     function addResult(result) {
-        return $("<li><div class='result card bg-secondary text-white rounded-0' style='width: 98%'>" +
-            "<img class='card-img-top' src='" + (result.thumbnailImg || "../images/noImage.png") +
-            "'><div class='card-body  text-center p-1'><p class='card-title mb-0'>" + result.title +
-            "</p></div></div></li>").appendTo(resultsList);
+        return $("<li><div class='result card bg-primary text-white rounded-0' style='width: 98%'>" +
+            "<img class='card-img-top rounded-0' src='" + (result.thumbnailImg || "../images/noImage.png") +
+            "'><div class='card-body  text-center p-1'><p class='card-title mb-0'>" +
+            "<span class= 'font-weight-bold text-dark'>" + labels[labelIndex % labels.length] + '. </span>' +
+            result.title + "</p></div></div></li>").appendTo(resultsList);
     }
 
     go.click(function () {
         setTimeout(function () { go.blur(); }, 200);
+        labelIndex = 0;
         $.getJSON('http://api.geonames.org/wikipediaSearch?maxRows=10&username=dovigee&type=json&callback=?',
             { q: input.val() }, function (data) {
                 if (!($.isEmptyObject(data.geonames))) {
@@ -28,7 +32,7 @@
                     resultsList.empty();
                     resetMarkers();
 
-                    // reset bounds for each query
+                    // reset for each query
                     var bounds = new google.maps.LatLngBounds();
 
                     // create li, marker, and infoWindow for each location
@@ -47,6 +51,7 @@
                         // creating marker
                         var marker = new google.maps.Marker({
                             position: location,
+                            label: labels[labelIndex++ % labels.length],
                             map: map,
                             title: result.title,
                             snippet: result.summary
@@ -57,10 +62,8 @@
                         var infoWindow = new google.maps.InfoWindow({
                             content: '<h6>' + marker.title + '</h6>' +
                                 '<p>' + marker.snippet + '</p>' +
-                                // it was trying to find url in localhost so...
-                                '<a class="nav-link p-0" href="http://' +
-                                result.wikipediaUrl.replace("http://", "") +
-                                '">Read More On Wikipedia</a>',
+                                '<a class="nav-link p-0" target="_blank" href="http://' +
+                                result.wikipediaUrl + '">Read More On Wikipedia</a>',
                             maxWidth: 200
                         });
                         infoWindows.push(infoWindow);
@@ -73,8 +76,8 @@
 
                         // fit all markers on map
                         bounds.extend(location);
-                        map.fitBounds(bounds);
                     });
+                    map.fitBounds(bounds);
                 } else {
                     resetMarkers();
                     panToLocation(0, 0, 2);
@@ -95,7 +98,7 @@
     }
 
     function panToLocation(lat, lng, zoom) {
-        map.setCenter({
+        map.panTo({
             lat: lat,
             lng: lng
         });
