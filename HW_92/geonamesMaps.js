@@ -10,7 +10,6 @@ function initMap() {
         label,
         markers = [],
         circle = {},
-        bounds,
         infoWindow = new google.maps.InfoWindow({ maxWidth: 200 });
 
     function addResult(result) {
@@ -32,6 +31,8 @@ function initMap() {
                     // radius: circle.radiusKM
                 }, function (data) {
                     if (!($.isEmptyObject(data.geonames))) {
+
+                        var bounds = new google.maps.LatLngBounds();
 
                         resetAll();
 
@@ -118,8 +119,6 @@ function initMap() {
     function resetAll() {
         resultsList.empty();
 
-        bounds = new google.maps.LatLngBounds();
-
         resetMarkers();
     }
 
@@ -129,7 +128,7 @@ function initMap() {
 
     // drawing stuff
     var drawingManager = new google.maps.drawing.DrawingManager({
-        drawingMode: google.maps.drawing.OverlayType.MARKER,
+        // drawingMode: google.maps.drawing.OverlayType.MARKER,
         drawingControl: true,
         drawingControlOptions: {
             position: google.maps.ControlPosition.TOP_CENTER,
@@ -145,10 +144,17 @@ function initMap() {
     });
     drawingManager.setMap(map);
     google.maps.event.addListener(drawingManager, 'overlaycomplete', function (event) {
-        circle.lat = event.overlay.getCenter().lat();
-        circle.lng = event.overlay.getCenter().lng();
-        circle.radiusKM = event.overlay.getRadius() * 1000;
-        console.log(circle);
+        var centerLat = event.overlay.getCenter().lat();
+        var centerLng = event.overlay.getCenter().lng();
+        var circleRadius = event.overlay.getRadius() / 1000;
+        $.getJSON('http://api.geonames.org/findNearbyPlaceNameJSON?&maxRows=10&username=dovigee',
+            { lat: centerLat, lng: centerLng, radius: circleRadius },
+            function (data) {
+                console.log(data);
+            })
+            .fail(function (xhr, statusCode, statusText) {
+                console.log(xhr, statusCode, statusText);
+            });
     });
 
 
