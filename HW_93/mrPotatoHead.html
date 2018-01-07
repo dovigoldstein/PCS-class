@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background-color: rgb(255, 217, 0);
+        }
+
+        .main {
+            height: 100%;
+            cursor: url('../images/cursor-hover.png'), auto;
+        }
+
+        #canvas {
+            margin-top: 110px;
+            margin-left: 50%;
+            left: 58.5px;
+            position: absolute;
+        }
+
+        #palette {
+            background-color: rgb(33, 124, 228);
+            width: 40%;
+            height: 100%;
+        }
+
+        .part {
+            position: absolute;
+        }
+
+        .part:active {
+            cursor: url('../images/cursor-grab.png'), auto;
+        }
+
+        #navBar {
+            float: right;
+            background-color: rgb(70, 6, 70);
+            height: 100%;
+        }
+
+        #logo {
+            margin-bottom: 35px;
+        }
+
+        #sound {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background-color: #77f130;
+            margin: auto;
+            cursor: url('../images/cursor-point.png'), auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navBar">
+        <div id="logo">
+            <img src="../images/mrPotatoHead-logo.png">
+        </div>
+        <div id="sound">
+            <img id="soundImage" src="../images/sound.png">
+        </div>
+
+    </div>
+    <div class="main">
+        <div id="canvas">
+            <img id="head" src="../images/mrPotatoHead-head.png">
+        </div>
+        <div id="palette">
+            <img class="part" id="eyes" src="../images/mrPotatoHead-eyes1.png" top="241px" left="36px">
+            <img class="part" id="leftArm" src="../images/mrPotatoHead-leftarm.png" top="220px" left="146px">
+            <img class="part" id="rightArm" src="../images/mrPotatoHead-rightArm.png" top="116px" left="34px">
+            <img class="part" id="leftEar" src="../images/mrPotatoHead-leftEar.png" top="148px" left="361px">
+            <img class="part" id="rightEar" src="../images/mrPotatoHead-rightEar.png" top="320px" left="30px">
+            <img class="part" id="mustache" src="../images/mrPotatoHead-mustache.png" top="20px" left="29px">
+            <img class="part" id="nose" src="../images/mrPotatoHead-nose.png" top="115px" left="186px">
+            <img class="part" id="teeth" src="../images/mrPotatoHead-teeth.png" top="562px" left="358px">
+            <img class="part" id="shoes" src="../images/mrPotatoHead-shoes.png" top="428px" left="233px">
+            <img class="part" id="shoes2" src="../images/mrPotatoHead-shoes2.png" top="529px" left="8px">
+            <img class="part" id="goatee" src="../images/mrPotatoHead-goatee.png" top="240px" left="351px">
+            <img class="part" id="hair" src="../images/mrPotatoHead-hair.png" top="0px" left="292px">
+            <img class="part" id="hat" src="../images/mrPotatoHead-hat.png" top="410px" left="18px">
+            <img class="part" id="lips" src="../images/mrPotatoHead-lips.png" top="317px" left="219px">
+        </div>
+    </div>
+
+
+
+    <audio id="audio" src="../images/backgroundKidsMusic.m4a" autoplay loop></audio>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="mrPotatoHead.js"></script>
+</body>
+
+</html>
