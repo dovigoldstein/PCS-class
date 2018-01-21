@@ -14,9 +14,11 @@
         offset = { y: event.offsetY, x: event.offsetX };
         dragging.css("zIndex", ++zIndex);
         dragging.addClass("dragging");
+        event.preventDefault();
     }).on('mouseup', '.part', function () {
-        var theID = dragging.attr('id');
-        localStorage.setItem('parts[' + theID + '].location', JSON.stringify({ top: dragging.css('top'), left: dragging.css('left') }));
+        // var theID = dragging.attr('id');
+        // localStorage.parts = {};
+        // localStorage.parts.setItem(theID, JSON.stringify({ top: dragging.css('top'), left: dragging.css('left') }));
         dragging.removeClass("dragging");
         dragging = null;
     }).mousemove(function (event) {
@@ -51,11 +53,11 @@
 
     $('#sound').click(function () {
         if (soundImage.attr('src') === '../images/sound.png') {
-            audio.trigger("pause");
+            audio[0].pause();
             soundImage.attr('src', '../images/mute.png');
             sound.css('background-color', '#f1303a');
         } else {
-            audio.trigger("play");
+            audio[0].play();
             soundImage.attr('src', '../images/sound.png');
             sound.css('background-color', '#77f130');
         }
