@@ -29,21 +29,17 @@
         context.arc(x, y, radius, 0, Math.PI * 2);
         context.stroke();
         context.fill();
+        context.closePath();
     }
 
     setInterval(function () {
         bounce = false;
-        if (x + radius >= canvas.width) {
-            directionX = -1;
+        if (x + radius >= canvas.width || x - radius <= 0) {
+            directionX = -directionX;
             bounce = true;
-        } else if (x - radius <= 0) {
-            directionX = 1;
-            bounce = true;
-        } else if (y + radius >= canvas.height) {
-            directionY = -1;
-            bounce = true;
-        } else if (y - radius <= 0) {
-            directionY = 1;
+        }
+        if (y + radius >= canvas.height || y - radius <= 0) {
+            directionY = -directionY;
             bounce = true;
         }
 
@@ -55,7 +51,7 @@
         x += directionX;
         y += directionY;
         drawCircle();
-    }, 10);
+    }, 1);
 
     function rgbGenerate() {
         var rgb = 'rgb(';
