@@ -1,0 +1,26 @@
+{
+  "name": "using_webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "autoColorChanger.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress -p",
+    "watch": "webpack --progress --watch",
+    "server": "webpack-dev-server --progress --open"
+  },
+  "author": "Dovi Goldstein",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "jshint": "^2.9.5",
+    "jshint-loader": "^0.8.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "uglifyjs-webpack-plugin": "^1.1.6",
+    "webpack": "^3.10.0"
+  }
+}
