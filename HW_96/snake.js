@@ -17,8 +17,8 @@
     canvas.width = segmentSize * 17;
     canvas.height = segmentSize * 10;
 
-    snakeImg.src = "../images/snake-" + direction + ".png";
-    appleImg.src = "../images/snake-apple.png";
+    snakeImg.src = "images/snake-" + direction + ".png";
+    appleImg.src = "images/snake-apple.png";
 
     snakeImg.onload = function () {
         context.drawImage(snakeImg, lat, lng, segmentSize, segmentSize);
@@ -72,7 +72,7 @@
                 gameInterval = null;
             } else {
                 context.clearRect(prevLat, prevLng, segmentSize, segmentSize);
-                snakeImg.src = "../images/snake-" + direction + ".png";
+                snakeImg.src = "images/snake-" + direction + ".png";
                 context.drawImage(snakeImg, lat, lng, segmentSize, segmentSize);
             }
         }, 400);
