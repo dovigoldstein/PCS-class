@@ -1,0 +1,43 @@
+body {
+    padding: 10px;
+    text-align: center;
+}
+
+.blog {
+    display: inline-block;
+    border: 2px solid rgb(8, 8, 70);
+    border-radius: 5px;
+    margin: 20px;
+    width: 210px;
+    cursor: pointer;
+}
+
+.post {
+    border: 2px solid rgb(185, 10, 10);
+    border-radius: 5px;
+    margin: 34px auto;
+    padding: 10px;
+    width: 396px;
+}
+
+.comment {
+    background-color: rgb(192, 187, 187);
+    width: 300px;
+    padding: 10px;
+    margin: 5px auto;
+}
+
+#blogsDiv{
+    margin: 0 50px;
+}
+
+#postsDiv {
+    display: none;
+    text-align: center;
+}
+
+#homeButton {
+    position: fixed;
+    left: 20px;
+    top: 10px;
+}
