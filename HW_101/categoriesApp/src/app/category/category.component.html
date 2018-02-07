@@ -1,0 +1,6 @@
+<ul *ngIf="category.items?.length;">
+  <li *ngFor="let item of category.items;">
+    <app-item [item]="item"></app-item>
+  </li>
+</ul>
+<h5 *ngIf="!(category.items)">No items in category</h5>
