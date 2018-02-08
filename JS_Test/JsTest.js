@@ -46,6 +46,7 @@
     });
 
     function getBlogs() {
+        blogsDiv.empty();
         $.getJSON('https://jsonplaceholder.typicode.com/users', function (blogs) {
             blogs = blogs.map(function (blog) {
                 return {
