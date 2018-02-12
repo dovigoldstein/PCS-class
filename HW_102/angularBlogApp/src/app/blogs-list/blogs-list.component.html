@@ -1,0 +1,15 @@
+<div *ngIf="!selectedBlog">
+  <div *ngFor="let blog of blogs" (click)="getPosts(blog)">
+    <h3>{{blog.name}}</h3>
+    <h5>{{blog.website}}</h5>
+    <h5>{{blog.company}}</h5>
+  </div>
+</div>
+<div *ngIf="selectedBlog !== null">
+  <ul *ngFor="let post of blogs.posts">
+    <li>
+      <h4>{{post.title}}</h4>
+      <p>{{post.body}}</p>
+    </li>
+  </ul>
+</div>
