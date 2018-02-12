@@ -3,11 +3,11 @@
   <h1>
     Choose A Category
   </h1>
-  <!-- <select [(ngModel)]="selectedCategory">
-    <option *ngFor="let category of categories" value={{category}}> {{category.name}}</option>
-  </select> -->
+  <select (ngModel)="selectedCategory">
+    <option *ngFor="let category of categories; let i = index;" value="{{i}}"> {{category.name}}</option>
+  </select>
 
-  <select ngModel="selectedCategory" ng-options="category.name for category in categories"></select>
+  <!-- <select ngModel="selectedCategory" ng-options="category.name for category in categories"></select> -->
   <hr>
   <h1>Items</h1>
   <ul>
