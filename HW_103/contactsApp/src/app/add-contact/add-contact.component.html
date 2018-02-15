@@ -1,0 +1,22 @@
+<form #f="ngForm" (ngSubmit)="addContact(f)" novalidate>
+  <div>
+    <label for="addFirst">First</label>
+    <input type="text" id="addFirst" name="first" ngModel>
+  </div>
+  <div>
+    <label for="addLast">Last</label>
+    <input type="text" id="addLast" name="last" ngModel>
+  </div>
+  <div>
+    <label for="addEmail">Email</label>
+    <input type="email" id="addEmail" name="email" ngModel>
+  </div>
+  <div>
+    <label for="addPhone">Phone</label>
+    <input type="phone" id="addPhone" name="phone" ngModel>
+  </div>
+  <div class="buttons">
+    <button type="submit">Add</button>
+  </div>
+</form>
+<button [routerLink]="['/contact-table']">Cancel</button>
