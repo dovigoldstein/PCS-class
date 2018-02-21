@@ -21,7 +21,6 @@ export class ContactsService {
     return this.httpClient.get<Contact[]>('http://localhost:80/school_stuff/homework/HW_103/php/contacts.php');
   }
 
-
   addContact(contact: Contact): Observable<Contact> {
     console.log("made it to service", contact);
     return this.httpClient.post<Contact>(
