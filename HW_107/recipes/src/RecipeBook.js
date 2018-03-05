@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route, Redirect, Link } from 'react-router-dom';
 import RecipeList from './RecipeList';
 import AddRecipe from './AddRecipe';
-import Recipe from './Recipe';
+// import Recipe from './Recipe';
 
 export default class RecipeBook extends Component {
     constructor(props) {
@@ -24,7 +24,7 @@ export default class RecipeBook extends Component {
         <Switch>
             <Route path="/Recipes" render={() => <RecipeList recipes={this.state.recipes} />} />
             {/* <Route path="/Recipe/:recipeId" component={Recipe} /> */}
-            <Route path="/AddRecipe" component={AddRecipe} />
+            <Route path="/AddRecipe" render={() => <AddRecipe addRecipe={this.addRecipe} />} />
             <Redirect exact from="/" to="/Recipes" />
             <Route render={() => <div>404</div>} />
         </Switch>
