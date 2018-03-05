@@ -23,7 +23,7 @@ export default class RecipeBook extends Component {
     routes = (
         <Switch>
             <Route path="/Recipes" render={() => <RecipeList recipes={this.state.recipes} />} />
-            <Route path="/Recipe/:recipeId" component={Recipe} />
+            {/* <Route path="/Recipe/:recipeId" component={Recipe} /> */}
             <Route path="/AddRecipe" component={AddRecipe} />
             <Redirect exact from="/" to="/Recipes" />
             <Route render={() => <div>404</div>} />
