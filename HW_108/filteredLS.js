@@ -1,5 +1,5 @@
 const fs = require('fs');
-fs.readdir(process.argv[2], 'utf8', (err, files) => {
+fs.readdir(process.argv[2], (err, files) => {
     if (err) {
         console.error('OOPS. Invalid Path', err);
     } else {
